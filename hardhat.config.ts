@@ -12,12 +12,12 @@ const config: HardhatUserConfig = {
   networks: {
     mumbai: {
       url: process.env.POLYGON_MUMBAI,
-      accounts: [],
+      accounts: [process.env.PRIVATE_KEY],
     }
   },
-  // etherscan: {
-  //   apiKey: process.env.API_KEY,
-  // }
+  etherscan: {
+    apiKey: process.env.API_KEY,
+  }
 };
 
 export default config;
