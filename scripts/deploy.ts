@@ -1,10 +1,11 @@
 // @ts-ignore
-import { ethers } from "hardhat";
+import hre from "hardhat";
 
 async function main() {
-  const paypal = await ethers.deployContract("Paypal");
+  const Paypal = await hre.ethers.getContractFactory("Paypal");
+  const paypal = await Paypal.deploy();
 
-  await paypal.waitForDeployment();
+  //await paypal.waitForDeployment();
 
   console.log(
     `paypal deployed to: ${paypal.address}`
