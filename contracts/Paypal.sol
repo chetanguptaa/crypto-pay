@@ -107,4 +107,8 @@ contract Paypal {
         return history[_user];
     }
 
+    function getMyName(address _user) public view returns(userName memory){
+        return names[_user];
+    }
+
 }
